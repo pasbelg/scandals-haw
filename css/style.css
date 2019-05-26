@@ -1,0 +1,143 @@
+ @import "https://fonts.googleapis.com/icon?family=Material+Icons";
+ @font-face {
+ font-family: "Product Sans";
+ src: url("https://fonts.gstatic.com/s/productsans/v7/HYvgU2fE2nRJvZ5JFAumwegdm0LZdjqr5-oayXSOefg.woff2") format("woff2");
+ }
+ body {
+ font-family: "Product Sans";
+ background:rgb(55, 55, 55);
+ color: white;
+ }
+#skandalSelect{
+    font-size: 20px;
+    height: 200px; 
+}
+#selectionForm{
+    margin-top:50px;
+    text-align: center;
+    
+}
+#selectionForm select{
+    width: 200px;
+    border-radius: 8px;
+}
+#selectionForm input{
+    background-color: rgb(184, 21, 0);
+    border-radius: 8px;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+}
+#selectionForm select{
+    width: 300px;
+    height: 50px;
+}
+
+.box{
+    margin-top:1%;
+    padding:10px;
+    border: 2px solid gray;
+    background-color: rgba(46, 138, 138, 0.5);
+}
+
+#horizontalChartBox{
+    height:600px;
+}
+#horizontalChart{
+    float: left;
+    width: 100%;
+    overflow: auto;
+    white-space: nowrap;
+}
+#horizontalChartMonths{
+    float: left;
+    width: 100%;
+    overflow: auto;
+    white-space: nowrap;
+}
+#avgDurVal{
+    font-size: 72px;
+    text-align: center;
+}
+.bars{
+    background:black;
+    transition: .5s;
+    padding-top: 25px;
+    padding-right: 5px;
+    border-radius: 5px 5px 0 0;
+    margin-right: 10px;
+    width: 20px;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    text-align: end;
+    font-size: 14px;
+}
+.bars:hover { 
+    background: rgb(184, 21, 0);
+  }
+.monthlyBars{
+    padding-bottom: 35px;
+}
+.occurenceBars{
+    padding-bottom: 10px;
+}
+.month{
+    width: 150px;
+    height: 20px;
+    background: rgb(78, 9, 0);
+    margin-right:1px;
+    padding-top:5px;
+    padding-bottom:5px;
+    text-align: center;
+    border-radius: 5px;
+}
+.nowarp{
+    display: inline-block;
+}
+#monthDisclaimer{
+    font-size: 10px;
+}
+
+
+  a,a:visited,a:hover,a:active{
+    -webkit-backface-visibility:hidden;
+            backface-visibility:hidden;
+    position:relative;
+    transition:0.5s color ease;
+    text-decoration:none;
+    font-size:20px;
+    color:white;
+  }
+  a:hover{
+      color:rgb(255, 30, 0);
+  }
+  a.before:before,a.after:after{
+    content: "";
+    transition:0.5s all ease;
+    -webkit-backface-visibility:hidden;
+            backface-visibility:hidden;
+    position:absolute;
+  }
+  a.before:before{
+    top:-0.25em;
+  }
+  a.after:after{
+    bottom:-0.25em;
+  }
+  a.before:before,a.after:after{
+    height:5px;
+    height:0.20rem;
+    width:0;
+    background:rgb(238, 28, 0);
+  }
+  a:after{
+    left:0;
+  }
+  a.before:hover:before,a.after:hover:after{
+    width:100%;
+  }
+
