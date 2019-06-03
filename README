@@ -1,1 +1,18 @@
+Verwendung des Tools für die Verarbeitung von Veröffentlichungsangaben auf Nexis.
 
+Allgemeines:
+Das Python-Programm im Verzeichnis python/ liest die meisten Datumsangaben von richtig exportierten HTML-Dateien aus.
+Das PHP-Skript verarbeitet die Datumsangaben, welche vom Python Programm in Form einer JSON-Datei im Verzeichnis json/ abgespeichert werden und stellt sie dar.
+Die Auswertung ist online unter skandale-2018.de und offline unter localhost/scandals-haw/ erreichbar.
+
+Anwendung in Schritten
+Python Programm:
+1. Exportierte HTML-Dateien müssen im Verzeichnis ./html abgelegt werden.
+2. Vor dem auslesen muss das Programm removeComment.py ausgeführt werden, um die Kommentare aus dem HTML-Code zu entfernen.
+3. Die bereinigten HTML-Dateien befinden sich jetzt auf Verzeichnisse aufgeteilt in dem Verzeichnis html/changed/
+4. Skandale, welches aus mehreren Dateien bestehen, müssen jetzt in das selbe Verzeichnis sortiert werden.
+5. Sind die Skandale alle sortiert, kann das Programm nexisHTMLDateScraper.py ausgeführt werden, um die JSON-Dateien zu produzieren.
+6. Im Verzeichnis json/ sind jetzt die ausgelesenen Datumsangaben in Form einer JSON-Datei pro Skandalverzeichnis.
+
+PHP-Skript:
+Es muss nur auf einem selbst installierten Webserver das Verzeichnis scandals-haw abgerufen werden. Außerdem kann das Ergebnis des PHP-Skripts online unter skandale-2018.de abgerufen werden.
