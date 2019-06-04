@@ -1,10 +1,10 @@
 """
 # Manuelle Schritte
-- Suchanfrage auf Nexis
-- Dokumente als HTML (Alle Haken herausnehmen) in 200er Batches herunterladen (Limit von Nexis) und Speichern
-
-# Imports und Setup
-"""
+- Verzeichnisse mit HTML-Dateien in das Verzeichnis html/ verschieben
+- Verzeichnis changed/ löschen
+- HTML-Dateien sortieren (Skandale mit mehreren HTML-Dateine in ein Verzeichnis verschieben)
+""""
+# Imports
 import os, re
 from bs4 import BeautifulSoup
 import json
@@ -37,16 +37,19 @@ def guess_date(string):
                 return x.strftime("%d-%m-%Y")
             except ValueError:
                 continue
-# Ab hier werden für jede HTML-Dateien die Daten ausgelesen
+# Ab hier werden für jede HTML-Dateien die Daten ausgelesen.
 for workingDir in htmlDirs:
     newHTML = os.listdir(HTMLpath + workingDir)
     loopNo = 1
     allData = {}
     dataArray = []
-    valueCountEnd=0
+    valueCountEnd = 0
     for f in newHTML:
-        filepath=HTMLpath + workingDir + '/' +  f
+        # Definieren der Datei.
+        filepath = HTMLpath + workingDir + '/' +  f
+        # Ausschließen von Dateien mit anderen Dateiendungen als HTML.
         if f.find('.HTML') != -1:
+            # Initialisieren von Beautiful Soup. (Bibliothek zum prasen von HTML-Dateien)
             with open(filepath, 'r', encoding="utf8") as html:
                 soup = BeautifulSoup(html, "html.parser")
                 documents = soup.findAll('docfull')
@@ -72,13 +75,13 @@ for workingDir in htmlDirs:
                     loopNo += 1  
                 # Erstellen des Verzeichnisses für das speichern der JSON-Dateien
                 try:  
-                    os.mkdir('./json')
+                    os.mkdir('../json')
                 except OSError:  
                     print ("Creation of the directory failed")
                 try:  
-                    os.mkdir('./json/' + workingDir)
+                    os.mkdir('../json/' + workingDir)
                 except OSError:  
                     print ("Creation of the directory failed")
                 # Umwandeln des Arrays in eine JSON-Datei welche unter json/ abgespeichert wird
-                with open('./json/'+workingDir+'/'+ 'data.json', 'w') as outfile:
+                with open('../json/'+workingDir+'/'+ 'data.json', 'w') as outfile:
                     json.dump(dataArray, outfile, indent=1, ensure_ascii=False)
