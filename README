@@ -3,7 +3,7 @@ Verwendung des Tools für die Verarbeitung von Veröffentlichungsangaben auf Nex
 Allgemeines:
 Das Python-Programm im Verzeichnis python/ liest die meisten Datumsangaben von richtig exportierten HTML-Dateien aus.
 Das PHP-Skript verarbeitet die Datumsangaben, welche vom Python-Programm in Form einer JSON-Datei im Verzeichnis json/ abgespeichert werden und stellt sie dar.
-Die Auswertung ist online unter skandale-2018.de und offline unter localhost/scandals-haw/ erreichbar.
+Die Auswertung ist online (bis 25.12.2019) unter skandale-2018.de und offline unter localhost/scandals-haw/ erreichbar.
 
 Anwendung in Schritten
 Python Programm:
